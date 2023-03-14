@@ -22,7 +22,10 @@ var app = builder.Build();
 app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
-app.UseCors(corsBuilder => corsBuilder.AllowAnyHeader().WithOrigins("https://localhost:4200"));
+app.UseCors(corsBuilder => corsBuilder
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .WithOrigins("https://localhost:4200"));
 
 if (app.Environment.IsDevelopment())
 {
