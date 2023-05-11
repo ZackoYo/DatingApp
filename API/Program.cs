@@ -28,6 +28,7 @@ app.UseHttpsRedirection();
 app.UseCors(corsBuilder => corsBuilder
                 .AllowAnyHeader()
                 .AllowAnyMethod()
+                .AllowCredentials()
                 .WithOrigins("https://localhost:4200"));
 
 if (app.Environment.IsDevelopment())
